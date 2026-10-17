@@ -1,0 +1,241 @@
+﻿Transaction_ID,Date,Month,Day_of_Week,Store,Product_Category,Product,Customer_Type,Payment_Method,Quantity,Unit_Price,Discount,Revenue,Cost,Profit,Customer_Rating,Delivery_Days
+T0001,2025-11-02,Nov,Sunday,Thu Duc,Home,Water Bottle,Office Worker,Credit Card,4,246000,25,738000,601383,136617,4.43,2.0
+T0002,2025-07-03,Jul,Thursday,District 1,Electronics,Wireless Earbuds,Office Worker,E-wallet,1,832000,20,665600,621077,44523,4.3,1.0
+T0003,2025-11-26,Nov,Wednesday,District 1,Electronics,Power Bank,Office Worker,Cash,2,448000,25,672000,721231,-49231,3.86,3.0
+T0004,2025-10-06,Oct,Monday,District 1,Fashion,T-Shirt,Student,Bank Transfer,1,287000,0,287000,159991,127009,4.71,1.0
+T0005,2025-02-12,Feb,Wednesday,District 7,Sports,Dumbbell Set,Office Worker,E-wallet,1,784000,10,705600,456193,249407,4.38,3.0
+T0006,2025-12-25,Dec,Thursday,District 3,Fashion,T-Shirt,Tourist,Bank Transfer,2,287000,15,487900,353241,134659,4.36,2.0
+T0007,2025-10-29,Oct,Wednesday,District 7,Home,Desk Lamp,Family,E-wallet,1,462000,10,415800,303243,112557,4.49,1.0
+T0008,2025-11-05,Nov,Wednesday,Thu Duc,Home,Water Bottle,Student,Credit Card,4,227000,5,862600,534517,328083,4.09,3.0
+T0009,2025-02-28,Feb,Friday,Thu Duc,Food & Beverage,Coffee Beans,Family,E-wallet,2,191000,15,324700,261877,62823,3.98,3.0
+T0010,2025-07-07,Jul,Monday,District 3,Fashion,Backpack,Tourist,Credit Card,1,623000,5,591850,350941,240909,4.51,2.0
+T0011,2025-06-07,Jun,Saturday,District 3,Sports,Yoga Mat,Family,E-wallet,1,352000,10,316800,228243,88557,4.22,1.0
+T0012,2025-12-13,Dec,Saturday,District 3,Fashion,Backpack,Student,Bank Transfer,1,666000,25,499500,395770,103730,4.19,2.0
+T0013,2025-09-16,Sep,Tuesday,Thu Duc,Electronics,Wireless Earbuds,Student,Bank Transfer,1,845000,10,760500,652150,108350,4.21,1.0
+T0014,2025-11-16,Nov,Sunday,District 1,Home,Desk Lamp,Tourist,Cash,1,418000,20,334400,280194,54206,3.92,
+T0015,2025-07-04,Jul,Friday,District 1,Home,Desk Lamp,Family,E-wallet,1,417000,10,375300,249778,125522,4.12,2.0
+T0016,2025-04-10,Apr,Thursday,District 1,Sports,Yoga Mat,Tourist,E-wallet,3,344000,10,928800,664801,263999,4.22,2.0
+T0017,2025-08-14,Aug,Thursday,District 3,Food & Beverage,Coffee Beans,Office Worker,Credit Card,1,172000,10,154800,110453,44347,4.25,1.0
+T0018,2025-01-29,Jan,Wednesday,District 1,Fashion,T-Shirt,Office Worker,Cash,1,290000,10,261000,166203,94797,3.75,3.0
+T0019,2025-11-17,Nov,Monday,District 7,Fashion,Jacket,Family,E-wallet,3,982000,25,2209500,1748485,461015,3.86,3.0
+T0020,2025-09-11,Sep,Thursday,District 3,Fashion,Backpack,Family,E-wallet,1,699000,15,594150,418122,176028,4.09,1.0
+T0021,2025-10-28,Oct,Tuesday,District 3,Sports,Yoga Mat,Office Worker,Credit Card,2,357000,0,714000,453035,260965,4.85,1.0
+T0022,2025-06-01,Jun,Sunday,Thu Duc,Food & Beverage,Protein Drink,Student,Cash,3,74000,10,199800,145987,53813,4.35,2.0
+T0023,2025-12-24,Dec,Wednesday,District 1,Electronics,Wireless Earbuds,Family,Credit Card,2,843000,20,1348800,1273501,75299,4.51,1.0
+T0024,2025-12-05,Dec,Friday,District 3,Home,Water Bottle,Office Worker,Credit Card,5,219000,15,930750,709000,221750,4.01,2.0
+T0025,2025-11-03,Nov,Monday,District 3,Electronics,Smart Watch,Office Worker,E-wallet,1,1617000,10,1455300,1150998,304302,4.27,3.0
+T0026,2025-03-28,Mar,Friday,Thu Duc,Sports,Yoga Mat,Office Worker,Credit Card,4,326000,10,1173600,815527,358073,3.39,4.0
+T0027,2025-07-13,Jul,Sunday,District 1,Home,Kitchen Set,Student,Credit Card,3,604000,15,1540200,1177868,362332,4.54,1.0
+T0028,2025-01-20,Jan,Monday,District 1,Home,Water Bottle,Family,Cash,5,213000,0,1065000,692839,372161,4.56,1.0
+T0029,2025-03-11,Mar,Tuesday,District 7,Fashion,Sneakers,Office Worker,Credit Card,1,1187000,10,1068300,661632,406668,4.12,3.0
+T0030,2025-10-01,Oct,Wednesday,District 7,Sports,Sports Bottle,Office Worker,Bank Transfer,2,252000,15,428400,308210,120190,3.64,4.0
+T0031,2025-10-23,Oct,Thursday,District 3,Electronics,Smart Watch,Family,E-wallet,1,1598000,10,1438200,1160646,277554,4.23,2.0
+T0032,2025-12-23,Dec,Tuesday,District 1,Electronics,Wireless Earbuds,Office Worker,E-wallet,3,961000,10,2594700,2194049,400651,4.21,2.0
+T0033,2025-05-21,May,Wednesday,District 3,Food & Beverage,Protein Drink,Family,Bank Transfer,5,79000,10,355500,247431,108069,4.33,1.0
+T0034,2025-06-07,Jun,Saturday,District 1,Electronics,Power Bank,Student,E-wallet,2,427000,0,854000,653021,200979,4.54,2.0
+T0035,2025-07-14,Jul,Monday,District 1,Electronics,Smart Watch,Office Worker,E-wallet,1,1510000,10,1359000,1128688,230312,3.5,3.0
+T0036,2025-03-25,Mar,Tuesday,District 3,Home,Kitchen Set,Tourist,E-wallet,1,582000,10,523800,379634,144166,4.31,2.0
+T0037,2025-03-01,Mar,Saturday,District 1,Electronics,Power Bank,Student,Credit Card,1,452000,10,406800,350044,56756,4.11,3.0
+T0038,2025-07-16,Jul,Wednesday,Thu Duc,Sports,Yoga Mat,Tourist,E-wallet,2,362000,15,615400,455833,159567,3.81,4.0
+T0039,2025-04-10,Apr,Thursday,District 3,Electronics,Power Bank,Family,Cash,1,456000,15,387600,358167,29433,4.22,2.0
+T0040,2025-09-26,Sep,Friday,District 7,Electronics,Wireless Earbuds,Office Worker,E-wallet,8,841000,20,5382400,4854833,527567,3.94,2.0
+T0041,2025-07-02,Jul,Wednesday,District 7,Fashion,Jacket,Student,Cash,2,893000,5,1696700,1048374,648326,4.36,3.0
+T0042,2025-11-18,Nov,Tuesday,District 7,Home,Storage Box,Office Worker,E-wallet,2,156000,5,296400,201386,95014,3.82,3.0
+T0043,2025-10-07,Oct,Tuesday,District 1,Electronics,Power Bank,Family,Cash,2,480000,5,912000,652645,259355,4.67,2.0
+T0044,2025-05-16,May,Friday,District 1,Sports,Dumbbell Set,Family,E-wallet,1,877000,25,657750,541964,115786,4.11,2.0
+T0045,2025-11-18,Nov,Tuesday,District 7,Food & Beverage,Protein Drink,Office Worker,E-wallet,4,67000,5,254600,186492,68108,4.01,2.0
+T0046,2025-11-11,Nov,Tuesday,Thu Duc,Sports,Running Shoes,Office Worker,Credit Card,1,1275000,10,1147500,810539,336961,3.58,3.0
+T0047,2025-06-14,Jun,Saturday,District 1,Electronics,Smart Watch,Family,Bank Transfer,1,1497000,25,1122750,1079786,42964,4.3,2.0
+T0048,2025-05-06,May,Tuesday,District 7,Electronics,Power Bank,Student,Cash,2,462000,10,831600,655753,175847,4.02,3.0
+T0049,2025-10-01,Oct,Wednesday,Thu Duc,Electronics,Power Bank,Student,E-wallet,1,460000,15,391000,351709,39291,,2.0
+T0050,2025-03-05,Mar,Wednesday,Thu Duc,Sports,Dumbbell Set,Student,Bank Transfer,1,793000,20,634400,524049,110351,3.94,3.0
+T0051,2025-03-30,Mar,Sunday,District 3,Electronics,Smart Watch,Office Worker,Bank Transfer,1,1499000,5,1424050,1120792,303258,4.27,3.0
+T0052,2025-01-04,Jan,Saturday,Thu Duc,Fashion,Jacket,Student,Bank Transfer,1,860000,15,731000,506687,224313,3.67,3.0
+T0053,2025-11-06,Nov,Thursday,District 1,Electronics,Bluetooth Speaker,Student,Bank Transfer,2,1098000,15,1866600,1568329,298271,4.26,1.0
+T0054,2025-09-24,Sep,Wednesday,District 3,Electronics,Smart Watch,Office Worker,Cash,1,1475000,10,1327500,1123434,204066,3.91,2.0
+T0055,2025-10-09,Oct,Thursday,District 1,Home,Desk Lamp,Tourist,Cash,1,409000,25,306750,269736,37014,4.17,3.0
+T0056,2025-11-04,Nov,Tuesday,District 7,Fashion,Jacket,Office Worker,Credit Card,1,983000,10,884700,570200,314500,4.15,3.0
+T0057,2025-07-10,Jul,Thursday,District 7,Home,Storage Box,Student,Cash,1,151000,20,120800,96816,23984,4.03,2.0
+T0058,2025-08-19,Aug,Tuesday,District 3,Home,Kitchen Set,Family,Bank Transfer,1,580000,10,522000,384784,137216,4.04,3.0
+T0059,2025-03-05,Mar,Wednesday,District 7,Electronics,Power Bank,Tourist,Cash,2,467000,5,887300,702999,184301,4.14,2.0
+T0060,2025-02-21,Feb,Friday,Thu Duc,Sports,Running Shoes,Office Worker,E-wallet,3,1359000,10,3669300,2567085,1102215,4.32,3.0
+T0061,2025-09-25,Sep,Thursday,Thu Duc,Sports,Sports Bottle,Family,Cash,1,235000,0,235000,144531,90469,4.2,2.0
+T0062,2025-07-14,Jul,Monday,District 1,Fashion,Sneakers,Family,E-wallet,2,1108000,20,1772800,1215840,556960,4.04,2.0
+T0063,2025-08-17,Aug,Sunday,District 7,Home,Storage Box,Tourist,E-wallet,5,165000,10,742500,537603,204897,4.4,2.0
+T0064,2025-10-30,Oct,Thursday,Thu Duc,Sports,Sports Bottle,Student,Cash,3,255000,0,765000,457888,307112,4.15,3.0
+T0065,2025-09-12,Sep,Friday,District 3,Home,Water Bottle,Family,E-wallet,1,209000,5,198550,132528,66022,4.88,1.0
+T0066,2025-08-13,Aug,Wednesday,District 3,Home,Storage Box,Student,Cash,4,157000,0,628000,416255,211745,4.19,3.0
+T0067,2025-08-15,Aug,Friday,Thu Duc,Electronics,Smart Watch,Family,Bank Transfer,1,1496000,20,1196800,1107735,89065,3.52,3.0
+T0068,2025-05-12,May,Monday,District 7,Home,Water Bottle,Office Worker,Credit Card,1,219000,5,208050,132310,75740,4.36,2.0
+T0069,2025-01-14,Jan,Tuesday,District 1,Food & Beverage,Protein Drink,Tourist,Credit Card,7,81000,5,538650,399156,139494,4.74,1.0
+T0070,2025-07-02,Jul,Wednesday,District 1,Food & Beverage,Coffee Beans,Student,E-wallet,2,174000,5,330600,231056,99544,4.38,1.0
+T0071,2025-04-05,Apr,Saturday,District 3,Fashion,Jacket,Tourist,E-wallet,1,832000,0,832000,462371,369629,4.14,3.0
+T0072,2025-06-21,Jun,Saturday,Thu Duc,Food & Beverage,Snack Box,Office Worker,Bank Transfer,1,92000,10,82800,60102,22698,4.27,2.0
+T0073,2025-11-24,Nov,Monday,District 3,Food & Beverage,Tea Box,Family,Credit Card,1,127000,10,114300,86565,27735,3.85,2.0
+T0074,2025-04-13,Apr,Sunday,District 3,Fashion,T-Shirt,Office Worker,E-wallet,2,307000,5,583300,350109,233191,4.1,3.0
+T0075,2025-01-26,Jan,Sunday,District 1,Food & Beverage,Protein Drink,Office Worker,Bank Transfer,5,73000,35,237250,262274,-25024,3.83,2.0
+T0076,2025-05-03,May,Saturday,District 7,Sports,Sports Bottle,Office Worker,Cash,2,252000,5,478800,307678,171122,,2.0
+T0077,2025-05-08,May,Thursday,District 7,Sports,Yoga Mat,Family,E-wallet,1,365000,0,365000,224311,140689,4.43,1.0
+T0078,2025-09-23,Sep,Tuesday,District 3,Fashion,Jacket,Family,Cash,1,1046000,5,993700,602371,391329,4.0,2.0
+T0079,2025-08-14,Aug,Thursday,District 7,Electronics,Bluetooth Speaker,Office Worker,Credit Card,1,1145000,5,1087750,802305,285445,4.52,2.0
+T0080,2025-11-05,Nov,Wednesday,District 3,Home,Storage Box,Family,Credit Card,1,164000,15,139400,103025,36375,4.93,1.0
+T0081,2025-09-24,Sep,Wednesday,District 1,Home,Storage Box,Family,E-wallet,1,164000,0,164000,103578,60422,4.56,1.0
+T0082,2025-06-21,Jun,Saturday,District 3,Food & Beverage,Tea Box,Office Worker,E-wallet,1,129000,5,122550,91544,31006,3.74,3.0
+T0083,2025-11-13,Nov,Thursday,Thu Duc,Home,Water Bottle,Office Worker,Bank Transfer,1,185000,30,129500,117085,12415,3.31,3.0
+T0084,2025-03-16,Mar,Sunday,District 3,Electronics,Power Bank,Office Worker,Bank Transfer,1,461000,10,414900,323106,91794,4.13,3.0
+T0085,2025-01-11,Jan,Saturday,District 3,Sports,Sports Bottle,Student,E-wallet,1,259000,10,233100,160531,72569,4.16,2.0
+T0086,2025-02-10,Feb,Monday,District 7,Sports,Sports Bottle,Office Worker,Bank Transfer,2,247000,5,469300,310466,158834,3.86,4.0
+T0087,2025-10-15,Oct,Wednesday,District 7,Food & Beverage,Protein Drink,Office Worker,Credit Card,3,63000,10,170100,122909,47191,3.85,3.0
+T0088,2025-07-11,Jul,Friday,District 1,Food & Beverage,Coffee Beans,Office Worker,Bank Transfer,2,185000,10,333000,250673,82327,4.82,1.0
+T0089,2025-03-14,Mar,Friday,District 7,Sports,Sports Bottle,Family,Credit Card,4,230000,15,782000,535111,246889,4.17,3.0
+T0090,2025-07-25,Jul,Friday,District 7,Home,Storage Box,Student,E-wallet,2,161000,5,305900,208460,97440,3.9,3.0
+T0091,2025-03-10,Mar,Monday,District 3,Food & Beverage,Protein Drink,Family,E-wallet,2,70000,10,126000,97572,28428,4.38,1.0
+T0092,2025-10-06,Oct,Monday,District 1,Fashion,T-Shirt,Student,Cash,1,281000,5,266950,166107,100843,3.89,2.0
+T0093,2025-07-05,Jul,Saturday,District 1,Home,Desk Lamp,Tourist,Cash,4,416000,10,1497600,985392,512208,4.37,2.0
+T0094,2025-06-11,Jun,Wednesday,District 7,Home,Kitchen Set,Family,Cash,1,572000,25,429000,376842,52158,3.75,3.0
+T0095,2025-05-11,May,Sunday,District 7,Sports,Running Shoes,Student,E-wallet,1,1248000,20,998400,756743,241657,4.27,2.0
+T0096,2025-09-11,Sep,Thursday,Thu Duc,Fashion,Sneakers,Family,E-wallet,1,1211000,5,1150450,720319,430131,4.33,2.0
+T0097,2025-06-04,Jun,Wednesday,Thu Duc,Home,Storage Box,Tourist,E-wallet,2,165000,5,313500,206003,107497,3.72,3.0
+T0098,2025-02-09,Feb,Sunday,District 3,Electronics,Smart Watch,Office Worker,Cash,1,1633000,10,1469700,1244149,225551,4.3,2.0
+T0099,2025-02-23,Feb,Sunday,District 1,Home,Desk Lamp,Student,E-wallet,1,425000,10,382500,269928,112572,4.56,1.0
+T0100,2025-12-22,Dec,Monday,District 1,Electronics,Power Bank,Office Worker,E-wallet,1,431000,25,323250,329783,-6533,4.19,2.0
+T0101,2025-12-09,Dec,Tuesday,District 1,Sports,Dumbbell Set,Family,E-wallet,1,799000,15,679150,500288,178862,3.54,3.0
+T0102,2025-10-07,Oct,Tuesday,District 3,Sports,Sports Bottle,Student,Credit Card,4,248000,10,892800,600098,292702,4.53,2.0
+T0103,2025-04-27,Apr,Sunday,District 7,Home,Water Bottle,Tourist,E-wallet,3,234000,10,631800,438332,193468,4.0,3.0
+T0104,2025-12-24,Dec,Wednesday,District 3,Home,Storage Box,Office Worker,Credit Card,4,147000,35,382200,362814,19386,4.15,2.0
+T0105,2025-11-03,Nov,Monday,District 1,Electronics,Power Bank,Tourist,E-wallet,1,416000,20,332800,306192,26608,4.44,1.0
+T0106,2025-10-13,Oct,Monday,Thu Duc,Fashion,Jacket,Family,Credit Card,6,1049000,15,5349900,3592585,1757315,4.15,3.0
+T0107,2025-07-06,Jul,Sunday,Thu Duc,Sports,Sports Bottle,Tourist,Bank Transfer,2,232000,5,440800,298225,142575,4.18,2.0
+T0108,2025-04-30,Apr,Wednesday,Thu Duc,Electronics,Wireless Earbuds,Family,Credit Card,3,893000,15,2277150,1913024,364126,3.74,3.0
+T0109,2025-02-13,Feb,Thursday,District 1,Electronics,Wireless Earbuds,Office Worker,Credit Card,1,865000,15,735250,637584,97666,4.0,2.0
+T0110,2025-12-07,Dec,Sunday,Thu Duc,Electronics,Power Bank,Family,Credit Card,1,431000,5,409450,316121,93329,4.09,2.0
+T0111,2025-07-09,Jul,Wednesday,District 3,Electronics,Bluetooth Speaker,Family,E-wallet,1,1104000,15,938400,790461,147939,4.17,3.0
+T0112,2025-03-31,Mar,Monday,Thu Duc,Food & Beverage,Protein Drink,Office Worker,Bank Transfer,2,80000,10,144000,102738,41262,4.22,3.0
+T0113,2025-05-13,May,Tuesday,District 1,Electronics,Bluetooth Speaker,Student,Credit Card,1,1073000,5,1019350,803632,215718,4.26,2.0
+T0114,2025-08-23,Aug,Saturday,District 3,Home,Desk Lamp,Student,E-wallet,5,442000,10,1989000,1438359,550641,3.79,2.0
+T0115,2025-03-20,Mar,Thursday,Thu Duc,Electronics,Wireless Earbuds,Tourist,Bank Transfer,2,853000,20,1364800,1229463,135337,3.98,3.0
+T0116,2025-11-25,Nov,Tuesday,District 3,Food & Beverage,Tea Box,Family,Credit Card,3,113000,10,305100,227417,77683,3.86,3.0
+T0117,2025-10-28,Oct,Tuesday,District 7,Fashion,Sneakers,Office Worker,E-wallet,1,1108000,15,941800,657386,284414,4.49,2.0
+T0118,2025-10-14,Oct,Tuesday,Thu Duc,Sports,Yoga Mat,Office Worker,E-wallet,1,338000,5,321100,200800,120300,3.92,2.0
+T0119,2025-06-30,Jun,Monday,District 3,Food & Beverage,Coffee Beans,Family,E-wallet,2,169000,10,304200,231446,72754,4.62,1.0
+T0120,2025-09-10,Sep,Wednesday,District 1,Food & Beverage,Snack Box,Office Worker,E-wallet,1,92000,5,87400,64906,22494,4.3,2.0
+T0121,2025-08-24,Aug,Sunday,Thu Duc,Sports,Dumbbell Set,Tourist,Bank Transfer,1,824000,25,618000,458719,159281,2.85,4.0
+T0122,2025-09-18,Sep,Thursday,District 3,Food & Beverage,Snack Box,Office Worker,Credit Card,2,90000,5,171000,126111,44889,3.7,3.0
+T0123,2025-02-07,Feb,Friday,District 3,Sports,Yoga Mat,Office Worker,Cash,1,325000,5,308750,202169,106581,4.1,1.0
+T0124,2025-06-24,Jun,Tuesday,District 1,Electronics,Bluetooth Speaker,Office Worker,Cash,1,1060000,5,1007000,800991,206009,4.77,1.0
+T0125,2025-01-19,Jan,Sunday,Thu Duc,Food & Beverage,Snack Box,Family,E-wallet,3,93000,5,265050,195009,70041,4.01,3.0
+T0126,2025-07-22,Jul,Tuesday,District 1,Food & Beverage,Tea Box,Office Worker,E-wallet,2,118000,15,200600,156065,44535,4.47,1.0
+T0127,2025-05-22,May,Thursday,District 3,Fashion,Sneakers,Tourist,E-wallet,1,1226000,10,1103400,718642,384758,4.13,2.0
+T0128,2025-03-07,Mar,Friday,Thu Duc,Electronics,Smart Watch,Tourist,E-wallet,1,1655000,10,1489500,1186314,303186,,4.0
+T0129,2025-02-16,Feb,Sunday,District 1,Electronics,Smart Watch,Student,E-wallet,1,1530000,20,1224000,1152718,71282,3.81,
+T0130,2025-08-26,Aug,Tuesday,District 3,Fashion,Sneakers,Tourist,E-wallet,1,1208000,5,1147600,718709,428891,4.54,2.0
+T0131,2025-03-18,Mar,Tuesday,District 7,Fashion,Jacket,Family,Credit Card,1,985000,5,935750,581256,354494,3.83,3.0
+T0132,2025-12-13,Dec,Saturday,District 1,Fashion,Backpack,Student,Cash,1,628000,25,471000,350307,120693,4.65,1.0
+T0133,2025-08-23,Aug,Saturday,District 1,Food & Beverage,Coffee Beans,Student,E-wallet,6,177000,0,1062000,723588,338412,4.64,1.0
+T0134,2025-05-29,May,Thursday,District 3,Fashion,Jacket,Student,E-wallet,1,991000,15,842350,572863,269487,4.04,2.0
+T0135,2025-08-27,Aug,Wednesday,Thu Duc,Home,Storage Box,Student,Bank Transfer,4,154000,15,523600,404891,118709,3.81,3.0
+T0136,2025-01-11,Jan,Saturday,District 7,Sports,Sports Bottle,Office Worker,E-wallet,1,257000,10,231300,157894,73406,4.02,3.0
+T0137,2025-12-21,Dec,Sunday,Thu Duc,Fashion,Jacket,Office Worker,E-wallet,1,972000,10,874800,584842,289958,4.51,3.0
+T0138,2025-07-18,Jul,Friday,Thu Duc,Sports,Running Shoes,Student,Cash,1,1325000,10,1192500,899246,293254,3.84,3.0
+T0139,2025-11-04,Nov,Tuesday,District 1,Food & Beverage,Coffee Beans,Student,Credit Card,1,182000,5,172900,126363,46537,4.15,2.0
+T0140,2025-02-06,Feb,Thursday,District 7,Food & Beverage,Protein Drink,Office Worker,Cash,1,80000,10,72000,59755,12245,4.34,1.0
+T0141,2025-07-20,Jul,Sunday,District 3,Fashion,Backpack,Student,Cash,1,637000,0,637000,396889,240111,3.99,2.0
+T0142,2025-07-21,Jul,Monday,Thu Duc,Home,Water Bottle,Office Worker,E-wallet,2,220000,0,440000,283305,156695,4.61,1.0
+T0143,2025-12-16,Dec,Tuesday,District 7,Fashion,T-Shirt,Office Worker,Bank Transfer,3,273000,20,655200,488161,167039,4.13,3.0
+T0144,2025-08-20,Aug,Wednesday,District 1,Food & Beverage,Tea Box,Family,Credit Card,2,115000,10,207000,150380,56620,4.28,2.0
+T0145,2025-07-15,Jul,Tuesday,District 1,Sports,Sports Bottle,Family,E-wallet,1,249000,0,249000,149503,99497,4.92,1.0
+T0146,2025-04-27,Apr,Sunday,District 7,Home,Storage Box,Student,E-wallet,2,159000,15,270300,208329,61971,4.65,1.0
+T0147,2025-05-23,May,Friday,District 3,Food & Beverage,Snack Box,Student,E-wallet,3,94000,5,267900,179368,88532,4.42,2.0
+T0148,2025-08-01,Aug,Friday,District 1,Fashion,Sneakers,Tourist,E-wallet,1,1069000,5,1015550,646826,368724,4.57,2.0
+T0149,2025-07-03,Jul,Thursday,District 1,Fashion,T-Shirt,Student,Cash,3,294000,5,837900,557620,280280,4.46,1.0
+T0150,2025-01-10,Jan,Friday,District 1,Electronics,Bluetooth Speaker,Office Worker,Cash,1,1178000,10,1060200,891584,168616,4.31,2.0
+T0151,2025-11-17,Nov,Monday,District 3,Home,Desk Lamp,Office Worker,Credit Card,1,446000,15,379100,285557,93543,4.54,1.0
+T0152,2025-12-05,Dec,Friday,Thu Duc,Food & Beverage,Snack Box,Student,E-wallet,3,99000,20,237600,209378,28222,4.18,3.0
+T0153,2025-03-05,Mar,Wednesday,Thu Duc,Fashion,Backpack,Student,Credit Card,2,649000,10,1168200,758045,410155,3.77,2.0
+T0154,2025-08-13,Aug,Wednesday,District 7,Fashion,T-Shirt,Office Worker,E-wallet,4,266000,5,1010800,634160,376640,4.27,2.0
+T0155,2025-02-19,Feb,Wednesday,Thu Duc,Electronics,Wireless Earbuds,Family,Cash,1,778000,15,661300,572941,88359,3.79,3.0
+T0156,2025-09-27,Sep,Saturday,District 7,Home,Kitchen Set,Office Worker,Credit Card,3,574000,10,1549800,1077231,472569,3.9,3.0
+T0157,2025-05-03,May,Saturday,District 7,Home,Water Bottle,Office Worker,Cash,3,239000,15,609450,431532,177918,4.67,1.0
+T0158,2025-09-22,Sep,Monday,District 7,Home,Kitchen Set,Family,Credit Card,1,583000,5,553850,387926,165924,3.7,4.0
+T0159,2025-10-17,Oct,Friday,District 3,Fashion,Jacket,Office Worker,Cash,1,862000,15,732700,482757,249943,4.39,2.0
+T0160,2025-11-01,Nov,Saturday,Thu Duc,Sports,Yoga Mat,Office Worker,E-wallet,2,366000,20,585600,445340,140260,4.22,
+T0161,2025-02-18,Feb,Tuesday,Thu Duc,Food & Beverage,Protein Drink,Student,Cash,2,72000,5,136800,95267,41533,4.62,2.0
+T0162,2025-12-10,Dec,Wednesday,District 3,Food & Beverage,Snack Box,Family,E-wallet,6,96000,30,403200,391189,12011,3.92,2.0
+T0163,2025-04-12,Apr,Saturday,District 3,Fashion,Backpack,Office Worker,Bank Transfer,1,623000,5,591850,375133,216717,3.8,4.0
+T0164,2025-01-17,Jan,Friday,Thu Duc,Fashion,Sneakers,Office Worker,E-wallet,1,1300000,10,1170000,763469,406531,3.68,4.0
+T0165,2025-08-14,Aug,Thursday,District 1,Electronics,Smart Watch,Family,Cash,1,1581000,10,1422900,1259717,163183,3.85,2.0
+T0166,2025-06-07,Jun,Saturday,District 1,Electronics,Bluetooth Speaker,Office Worker,E-wallet,1,1115000,10,1003500,840509,162991,4.48,2.0
+T0167,2025-11-18,Nov,Tuesday,Thu Duc,Electronics,Smart Watch,Office Worker,Cash,2,1778000,0,3556000,2505049,1050951,3.78,3.0
+T0168,2025-11-12,Nov,Wednesday,Thu Duc,Home,Water Bottle,Student,Cash,2,221000,25,331500,296030,35470,3.77,4.0
+T0169,2025-05-17,May,Saturday,District 7,Food & Beverage,Snack Box,Office Worker,Bank Transfer,2,91000,10,163800,119585,44215,4.05,4.0
+T0170,2025-12-20,Dec,Saturday,District 1,Food & Beverage,Snack Box,Tourist,E-wallet,7,91000,20,509600,451927,57673,3.68,2.0
+T0171,2025-05-07,May,Wednesday,District 1,Electronics,Smart Watch,Student,Credit Card,1,1673000,15,1422050,1196303,225747,4.61,1.0
+T0172,2025-07-30,Jul,Wednesday,District 3,Fashion,Jacket,Office Worker,Cash,1,914000,15,776900,558644,218256,4.05,2.0
+T0173,2025-04-23,Apr,Wednesday,District 3,Home,Water Bottle,Office Worker,Cash,2,228000,25,342000,304173,37827,3.98,2.0
+T0174,2025-12-15,Dec,Monday,Thu Duc,Food & Beverage,Coffee Beans,Student,E-wallet,4,170000,20,544000,431686,112314,3.42,4.0
+T0175,2025-03-15,Mar,Saturday,District 3,Sports,Running Shoes,Office Worker,E-wallet,1,1319000,5,1253050,821180,431870,4.27,2.0
+T0176,2025-01-20,Jan,Monday,District 1,Fashion,T-Shirt,Student,Credit Card,2,253000,15,430100,298143,131957,3.88,3.0
+T0177,2025-07-01,Jul,Tuesday,District 3,Home,Desk Lamp,Student,E-wallet,1,396000,15,336600,252878,83722,4.48,2.0
+T0178,2025-12-30,Dec,Tuesday,District 7,Home,Desk Lamp,Student,Bank Transfer,3,429000,15,1093950,741186,352764,3.9,3.0
+T0179,2025-12-04,Dec,Thursday,Thu Duc,Electronics,Wireless Earbuds,Student,E-wallet,1,858000,5,815100,672552,142548,4.61,1.0
+T0180,2025-10-24,Oct,Friday,District 7,Home,Kitchen Set,Family,Bank Transfer,2,579000,15,984300,730672,253628,4.12,2.0
+T0181,2025-12-04,Dec,Thursday,Thu Duc,Fashion,Backpack,Office Worker,Cash,1,644000,10,579600,383322,196278,3.91,3.0
+T0182,2025-12-05,Dec,Friday,District 7,Fashion,T-Shirt,Student,Bank Transfer,3,294000,30,617400,501856,115544,,2.0
+T0183,2025-07-31,Jul,Thursday,District 1,Food & Beverage,Snack Box,Family,Credit Card,5,92000,10,414000,318286,95714,4.08,3.0
+T0184,2025-05-17,May,Saturday,Thu Duc,Fashion,Sneakers,Family,E-wallet,1,1166000,15,991100,702326,288774,4.05,3.0
+T0185,2025-11-02,Nov,Sunday,District 7,Fashion,Backpack,Office Worker,Bank Transfer,1,582000,0,582000,340848,241152,4.51,1.0
+T0186,2025-09-23,Sep,Tuesday,District 1,Fashion,T-Shirt,Student,Credit Card,1,256000,5,243200,150033,93167,4.1,2.0
+T0187,2025-06-08,Jun,Sunday,District 1,Electronics,Power Bank,Student,Credit Card,3,464000,10,1252800,1052429,200371,4.02,3.0
+T0188,2025-02-12,Feb,Wednesday,District 7,Sports,Sports Bottle,Office Worker,Cash,1,261000,5,247950,167348,80602,4.64,2.0
+T0189,2025-10-24,Oct,Friday,Thu Duc,Electronics,Smart Watch,Family,E-wallet,1,1531000,10,1377900,1271209,106691,3.97,2.0
+T0190,2025-04-25,Apr,Friday,District 1,Food & Beverage,Snack Box,Student,Bank Transfer,4,91000,5,345800,250954,94846,4.52,2.0
+T0191,2025-12-16,Dec,Tuesday,Thu Duc,Sports,Dumbbell Set,Student,Bank Transfer,1,819000,15,696150,506109,190041,4.03,2.0
+T0192,2025-04-16,Apr,Wednesday,District 1,Food & Beverage,Protein Drink,Office Worker,E-wallet,2,75000,10,135000,106079,28921,,2.0
+T0193,2025-02-25,Feb,Tuesday,District 7,Home,Desk Lamp,Office Worker,E-wallet,2,403000,5,765700,519889,245811,4.43,1.0
+T0194,2025-11-18,Nov,Tuesday,Thu Duc,Electronics,Bluetooth Speaker,Family,E-wallet,1,1164000,30,814800,849924,-35124,3.81,1.0
+T0195,2025-03-10,Mar,Monday,District 1,Home,Storage Box,Office Worker,Bank Transfer,1,164000,15,139400,107627,31773,3.67,3.0
+T0196,2025-03-21,Mar,Friday,District 3,Fashion,Backpack,Office Worker,E-wallet,2,605000,5,1149500,701126,448374,4.16,2.0
+T0197,2025-08-30,Aug,Saturday,District 1,Electronics,Wireless Earbuds,Family,E-wallet,2,865000,20,1384000,1261885,122115,3.97,2.0
+T0198,2025-11-30,Nov,Sunday,District 1,Sports,Sports Bottle,Family,Credit Card,1,253000,15,215050,165567,49483,4.48,2.0
+T0199,2025-03-28,Mar,Friday,District 3,Fashion,T-Shirt,Family,Credit Card,2,291000,0,582000,360789,221211,4.59,1.0
+T0200,2025-05-15,May,Thursday,District 3,Food & Beverage,Protein Drink,Family,Cash,2,73000,15,124100,97088,27012,4.01,3.0
+T0201,2025-11-03,Nov,Monday,Thu Duc,Sports,Yoga Mat,Office Worker,E-wallet,2,324000,5,615600,389935,225665,4.05,3.0
+T0202,2025-12-24,Dec,Wednesday,District 7,Fashion,Jacket,Office Worker,E-wallet,1,1016000,20,812800,586825,225975,3.99,2.0
+T0203,2025-07-25,Jul,Friday,District 1,Fashion,Backpack,Student,E-wallet,1,634000,10,570600,353070,217530,4.4,1.0
+T0204,2025-03-06,Mar,Thursday,District 1,Electronics,Wireless Earbuds,Office Worker,E-wallet,3,810000,5,2308500,1877296,431204,3.98,2.0
+T0205,2025-01-07,Jan,Tuesday,District 7,Sports,Running Shoes,Office Worker,E-wallet,1,1367000,5,1298650,832043,466607,4.49,2.0
+T0206,2025-04-11,Apr,Friday,Thu Duc,Sports,Yoga Mat,Office Worker,Credit Card,1,385000,0,385000,229228,155772,3.76,4.0
+T0207,2025-03-01,Mar,Saturday,District 7,Sports,Running Shoes,Office Worker,E-wallet,1,1360000,10,1224000,805026,418974,4.3,2.0
+T0208,2025-09-29,Sep,Monday,District 1,Home,Storage Box,Student,Credit Card,2,162000,15,275400,212351,63049,4.23,2.0
+T0209,2025-02-25,Feb,Tuesday,Thu Duc,Home,Water Bottle,Student,E-wallet,4,227000,5,862600,621233,241367,4.74,3.0
+T0210,2025-07-27,Jul,Sunday,District 1,Fashion,Jacket,Family,Cash,1,964000,15,819400,541332,278068,,
+T0211,2025-10-05,Oct,Sunday,District 3,Fashion,T-Shirt,Student,Bank Transfer,1,270000,5,256500,158466,98034,4.44,1.0
+T0212,2025-08-23,Aug,Saturday,District 3,Electronics,Wireless Earbuds,Family,Credit Card,1,858000,25,643500,657624,-14124,3.81,2.0
+T0213,2025-03-30,Mar,Sunday,District 1,Fashion,Sneakers,Family,E-wallet,1,1106000,10,995400,623028,372372,3.99,2.0
+T0214,2025-11-10,Nov,Monday,District 1,Sports,Dumbbell Set,Family,Credit Card,2,819000,15,1392300,1003374,388926,4.25,2.0
+T0215,2025-10-13,Oct,Monday,District 1,Electronics,Power Bank,Office Worker,Cash,2,475000,10,855000,748085,106915,3.88,2.0
+T0216,2025-10-21,Oct,Tuesday,District 3,Electronics,Bluetooth Speaker,Tourist,Cash,1,1073000,0,1073000,847277,225723,4.84,1.0
+T0217,2025-03-01,Mar,Saturday,Thu Duc,Food & Beverage,Protein Drink,Student,E-wallet,1,77000,35,50050,52978,-2928,3.58,2.0
+T0218,2025-02-26,Feb,Wednesday,Thu Duc,Fashion,Backpack,Office Worker,E-wallet,2,619000,5,1176100,709560,466540,3.83,3.0
+T0219,2025-12-13,Dec,Saturday,District 7,Fashion,Backpack,Office Worker,Credit Card,1,638000,20,510400,367741,142659,3.68,2.0
+T0220,2025-06-17,Jun,Tuesday,District 1,Fashion,Jacket,Office Worker,Credit Card,1,911000,15,774350,547042,227308,4.66,1.0
+T0221,2025-05-11,May,Sunday,District 3,Home,Water Bottle,Student,Cash,1,215000,5,204250,138330,65920,4.78,2.0
+T0222,2025-07-21,Jul,Monday,Thu Duc,Fashion,Backpack,Office Worker,Bank Transfer,3,655000,10,1768500,1183078,585422,3.96,3.0
+T0223,2025-09-23,Sep,Tuesday,District 7,Sports,Sports Bottle,Family,E-wallet,1,258000,15,219300,160319,58981,4.12,2.0
+T0224,2025-12-20,Dec,Saturday,District 1,Fashion,T-Shirt,Student,Credit Card,1,263000,0,263000,143848,119152,4.82,1.0
+T0225,2025-05-05,May,Monday,Thu Duc,Sports,Running Shoes,Office Worker,E-wallet,1,1411000,20,1128800,850150,278650,3.26,3.0
+T0226,2025-12-13,Dec,Saturday,District 1,Electronics,Smart Watch,Student,Credit Card,1,1643000,10,1478700,1176965,301735,4.19,2.0
+T0227,2025-01-11,Jan,Saturday,District 7,Home,Water Bottle,Tourist,Cash,8,223000,20,1427200,1154743,272457,3.45,4.0
+T0228,2025-08-14,Aug,Thursday,District 1,Fashion,Backpack,Tourist,Credit Card,2,671000,10,1207800,753736,454064,4.09,1.0
+T0229,2025-09-12,Sep,Friday,Thu Duc,Sports,Sports Bottle,Family,Credit Card,4,249000,15,846600,570075,276525,4.45,1.0
+T0230,2025-02-17,Feb,Monday,Thu Duc,Home,Storage Box,Family,Cash,10,163000,10,1467000,1057105,409895,4.41,3.0
+T0231,2025-03-05,Mar,Wednesday,District 7,Sports,Yoga Mat,Family,Credit Card,3,351000,20,842400,654322,188078,4.34,2.0
+T0232,2025-06-25,Jun,Wednesday,District 1,Sports,Sports Bottle,Student,Cash,5,238000,15,1011500,743903,267597,4.37,1.0
+T0233,2025-12-23,Dec,Tuesday,District 7,Sports,Running Shoes,Office Worker,Credit Card,1,1209000,30,846300,786862,59438,3.36,3.0
+T0234,2025-08-29,Aug,Friday,District 3,Fashion,T-Shirt,Tourist,E-wallet,4,293000,25,879000,705488,173512,3.83,3.0
+T0235,2025-12-15,Dec,Monday,Thu Duc,Electronics,Power Bank,Office Worker,Cash,1,477000,10,429300,354852,74448,3.95,3.0
+T0236,2025-11-11,Nov,Tuesday,District 7,Sports,Sports Bottle,Office Worker,Cash,3,265000,5,755250,499055,256195,4.42,2.0
+T0237,2025-07-13,Jul,Sunday,District 1,Food & Beverage,Protein Drink,Student,E-wallet,2,70000,5,133000,90068,42932,4.67,2.0
+T0238,2025-11-05,Nov,Wednesday,District 7,Fashion,Sneakers,Family,E-wallet,1,1212000,15,1030200,711621,318579,4.26,2.0
+T0239,2025-01-08,Jan,Wednesday,District 7,Fashion,T-Shirt,Office Worker,E-wallet,1,296000,10,266400,161440,104960,3.94,3.0
+T0240,2025-02-19,Feb,Wednesday,District 1,Electronics,Wireless Earbuds,Family,E-wallet,1,928000,5,881600,713475,168125,4.68,1.0

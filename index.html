@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('dv-theme'); } catch (e) {}
+      var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var dark = saved === 'dark' || (saved !== 'light' && systemDark);
+      var root = document.documentElement;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      root.dataset.themeSource = (saved === 'light' || saved === 'dark') ? 'user' : 'system';
+    })();
+  </script>
+  <title>25C02001_DataViz_Midterm</title>
+  <meta name="description" content="Trực quan hoá tương tác bộ dữ liệu Urban Retail Sales – HCMC 2025 (240 giao dịch). Lê Thị Hồng Đào – 25C02001.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="tag">25C02001_DataViz_Midterm</span>
+      <button id="themeToggle" class="ghost-btn" type="button" aria-label="Đổi giao diện sáng/tối">◐ Giao diện</button>
+    </div>
+    <h1>Doanh thu cao chưa chắc đã lãi nhiều</h1>
+    <p class="subtitle">Phân tích tương tác 240 giao dịch bán lẻ tại 4 chi nhánh TP.HCM năm 2025</p>
+    <dl class="student">
+      <div><dt>Học viên</dt><dd>Lê Thị Hồng Đào</dd></div>
+      <div><dt>MSHV</dt><dd>25C02001</dd></div>
+      <div><dt>Môn học</dt><dd>Trực quan hoá dữ liệu – Đồ án giữa kỳ</dd></div>
+    </dl>
+    <nav class="toc" aria-label="Mục lục">
+      <a href="#gioi-thieu">Giới thiệu</a>
+      <a href="#tong-quan">Tổng quan</a>
+      <a href="#insight-1">Nhận định 1–8</a>
+      <a href="#ket-luan">Kết luận</a>
+      <a href="#bang-du-lieu">Bảng dữ liệu</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- 1. Giới thiệu -->
+  <section id="gioi-thieu" class="section">
+    <h2><span class="sec-no">01</span> Giới thiệu bộ dữ liệu</h2>
+    <div class="intro-grid">
+      <div>
+        <p><strong>Urban Retail Sales – HCMC 2025</strong> gồm <strong>240 giao dịch</strong> từ 04/01/2025 đến 30/12/2025 của một chuỗi bán lẻ có 4 chi nhánh: <em>Quận 1, Quận 3, Quận 7 và Thủ Đức</em>. Hàng bán thuộc 5 nhóm (Electronics, Fashion, Food &amp; Beverage, Home, Sports), tổng cộng 20 sản phẩm.</p>
+        <p>Mỗi giao dịch có thời gian, chi nhánh, sản phẩm, loại khách hàng, phương thức thanh toán, số lượng, đơn giá, % giảm giá, doanh thu, giá vốn, lợi nhuận, điểm đánh giá (1–5) và số ngày giao hàng.</p>
+        <p class="muted">Câu hỏi xuyên suốt: <strong>điều gì thực sự tạo ra lợi nhuận và sự hài lòng của khách hàng?</strong> Mỗi nhận định đi theo các bước: <em>Quan sát → So sánh → Điều tra → Nhận định</em>.</p>
+      </div>
+      <div class="card note">
+        <h3>Làm sạch &amp; kiểm tra dữ liệu</h3>
+        <ul>
+          <li>Đã kiểm tra công thức: <code>Doanh thu = SL × Đơn giá × (1 − Giảm giá)</code> và <code>Lợi nhuận = Doanh thu − Giá vốn</code>. Cả 240 dòng đều khớp.</li>
+          <li>Thiếu <strong>6</strong> giá trị <em>Customer_Rating</em> và <strong>4</strong> giá trị <em>Delivery_Days</em>. Các dòng này vẫn được tính vào doanh thu/lợi nhuận, chỉ bị loại khỏi phép tính trung bình của cột bị thiếu.</li>
+          <li><strong>Biên lợi nhuận</strong> = Tổng lợi nhuận ÷ Tổng doanh thu (tính trên tổng, không lấy trung bình của các tỷ lệ).</li>
+          <li><strong>Giảm giá trung bình</strong> là trung bình cộng từng giao dịch (mỗi đơn một phiếu), không nhân theo doanh thu.</li>
+          <li>Đơn vị tiền: VNĐ. “tr” = triệu đồng.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bộ lọc toàn cục -->
+  <div id="filterBar" class="filter-bar" role="region" aria-label="Bộ lọc dữ liệu">
+    <div class="filter-row">
+      <label>Từ tháng <select id="fMonthFrom"></select></label>
+      <label>Đến tháng <select id="fMonthTo"></select></label>
+      <label>Chi nhánh <select id="fStore"></select></label>
+      <label>Nhóm hàng <select id="fCategory"></select></label>
+      <label>Loại khách <select id="fCustomer"></select></label>
+      <label>Thanh toán <select id="fPayment"></select></label>
+      <label>Ngày <select id="fWeekday"></select></label>
+      <label>Giảm giá <select id="fDiscount"></select></label>
+      <label>Sản phẩm <select id="fProduct"></select></label>
+      <button id="fReset" class="ghost-btn" type="button">Xoá lọc</button>
+    </div>
+    <div class="filter-status"><span id="filterCount"></span> <span class="muted">· Nhấn vào cột, lát cắt, sản phẩm hoặc điểm trên bản đồ để lọc nhanh. Khi đang lọc, đoạn chữ cạnh biểu đồ tính theo bộ lọc; tiêu đề nhận định và mục Kết luận giữ kết quả cả năm.</span></div>
+  </div>
+
+  <!-- 2. Tổng quan -->
+  <section id="tong-quan" class="section">
+    <h2><span class="sec-no">02</span> Tổng quan hiệu quả kinh doanh</h2>
+    <div id="kpis" class="kpis" aria-live="polite"></div>
+    <div class="grid-2">
+      <figure class="card chart-card">
+        <figcaption><strong>Vị trí 4 chi nhánh</strong><span>Kích thước = doanh thu · màu = biên lợi nhuận · nhấn để lọc · chấm đặt tại tâm quận minh hoạ, không phải địa chỉ cửa hàng</span></figcaption>
+        <div id="map" class="map"></div>
+        <div class="map-legend" id="mapLegend"></div>
+      </figure>
+      <figure class="card chart-card">
+        <figcaption><strong>Doanh thu và lợi nhuận theo chi nhánh</strong><span>Phần đậm là lợi nhuận nằm trong doanh thu · nhãn = biên lợi nhuận</span></figcaption>
+        <div id="cStore" class="chart"></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Insight 1 -->
+  <section id="insight-1" class="section insight">
+    <div class="insight-head"><span class="badge">Nhận định 1</span><span class="dim">Nhóm hàng · Doanh thu vs Lợi nhuận</span></div>
+    <h2>Electronics mang về nhiều doanh thu nhất nhưng có biên lợi nhuận thấp nhất. Fashion mới là nhóm hàng sinh lời tốt nhất.</h2>
+    <div class="grid-2">
+      <figure class="card chart-card">
+        <figcaption><strong>Doanh thu và lợi nhuận theo nhóm hàng</strong><span>Nhấn vào cột để lọc theo nhóm hàng</span></figcaption>
+        <div id="cCategory" class="chart"></div>
+      </figure>
+      <figure class="card chart-card">
+        <figcaption><strong>Biên lợi nhuận của 20 sản phẩm</strong><span>Đường dọc = biên trung bình phần đang lọc · nhấn thanh để lọc sản phẩm</span></figcaption>
+        <div id="cProduct" class="chart tall"></div>
+      </figure>
+    </div>
+    <div class="explain">
+      <div><h4>Biểu đồ cho thấy</h4><p>Electronics dẫn đầu doanh thu (63,8 tr, 34% tổng) nhưng chỉ giữ lại <strong>15,3%</strong> thành lợi nhuận. Fashion có doanh thu thấp hơn (51,7 tr) nhưng lãi <strong>17,4 tr</strong>, nhiều hơn Electronics (9,8 tr), với biên <strong>33,6%</strong>.</p></div>
+      <div><h4>Mẫu hình</h4><p>Ở cấp sản phẩm, cả 4 sản phẩm Electronics đều nằm cuối bảng (12,3–17,1%), dưới mọi sản phẩm còn lại. Cả 4 sản phẩm Fashion đều trên 32%. Sports Bottle cũng đạt 32,5%, nên mốc 32% không chỉ thuộc Fashion. Wireless Earbuds thấp nhất (12,3%).</p></div>
+      <div><h4>Ý nghĩa</h4><p>Xếp hạng theo doanh thu sẽ đánh giá sai giá trị của Electronics. Để tăng lợi nhuận, nên dành trưng bày và khuyến mãi cho Fashion/Sports, còn với Electronics thì đàm phán lại giá nhập hoặc bán kèm phụ kiện có biên cao.</p></div>
+    </div>
+  </section>
+
+  <!-- Insight 2 -->
+  <section id="insight-2" class="section insight">
+    <div class="insight-head"><span class="badge">Nhận định 2</span><span class="dim">Chi nhánh · Cơ cấu sản phẩm</span></div>
+    <h2>Quận 1 có doanh thu cao nhất nhưng biên lợi nhuận thấp nhất, vì hơn một nửa doanh thu của Quận 1 đến từ Electronics.</h2>
+    <div class="grid-2">
+      <figure class="card chart-card">
+        <figcaption><strong>Cơ cấu doanh thu theo nhóm hàng tại mỗi chi nhánh (100%)</strong><span>Nhấn chú giải để ẩn/hiện nhóm hàng</span></figcaption>
+        <div id="cMix" class="chart"></div>
+      </figure>
+      <figure class="card chart-card">
+        <figcaption><strong>Tỷ trọng Electronics và biên lợi nhuận của chi nhánh</strong><span>Kích thước = doanh thu · màu cam = biên dưới trung bình phần đang xem</span></figcaption>
+        <div id="cMixScatter" class="chart"></div>
+      </figure>
+    </div>
+    <div class="explain">
+      <div><h4>Quan sát → So sánh</h4><p>Quận 1 dẫn đầu doanh thu (55,7 tr), nhưng biên lợi nhuận chỉ <strong>21,5%</strong>, trong khi 3 chi nhánh còn lại đều ở mức 26–27%. Thủ Đức có doanh thu thấp hơn mà lợi nhuận lại cao hơn (14,0 tr so với 12,0 tr).</p></div>
+      <div><h4>Điều tra</h4><p>Biểu đồ cột chồng cho thấy Electronics chiếm <strong>53%</strong> doanh thu Quận 1, gần gấp đôi các chi nhánh khác (19–29%). Trong từng nhóm hàng, biên Quận 1 không phải mức thấp bất thường: Electronics <strong>14,3%</strong> (bằng Quận 7, nhưng Quận 7 chỉ có 4 giao dịch Electronics; Quận 3 là 17,0%), Fashion <strong>34,7%</strong>. Biên cả chi nhánh thấp là do <em>cơ cấu sản phẩm</em>.</p></div>
+      <div><h4>Ý nghĩa</h4><p>Đây là hiệu ứng cơ cấu (mix effect). Muốn cải thiện Quận 1 thì nên điều chỉnh tỷ trọng ngành hàng (mở rộng Fashion, nhóm đang có biên 34,7% tại đây) thay vì cắt chi phí vận hành.</p></div>
+    </div>
+  </section>
+
+  <!-- Insight 3 -->
+  <section id="insight-3" class="section insight">
+    <div class="insight-head"><span class="badge">Nhận định 3</span><span class="dim">Giảm giá · Lợi nhuận</span></div>
+    <h2>Biên lợi nhuận giảm theo mức giảm giá chủ yếu vì giá vốn không giảm theo. Cả 6 giao dịch lỗ đều thuộc Electronics hoặc Food &amp; Beverage và đều giảm từ 25%.</h2>
+    <div class="grid-2">
+      <figure class="card chart-card">
+        <figcaption><strong>Mức giảm giá và biên lợi nhuận của từng giao dịch</strong><span>Kéo chuột (brush) để chọn một vùng · ◆ đỏ = giao dịch lỗ</span></figcaption>
+        <div id="cDiscScatter" class="chart"></div>
+        <div id="brushInfo" class="brush-info">Chưa chọn vùng nào. Hãy kéo chọn một vùng điểm để xem thống kê.</div>
+      </figure>
+      <figure class="card chart-card">
+        <figcaption><strong>Biên lợi nhuận theo mức giảm giá</strong><span>Màu càng đậm = giảm giá càng sâu · nhãn = số giao dịch · nhấn cột để lọc</span></figcaption>
+        <div id="cDiscBar" class="chart"></div>
+      </figure>
+    </div>
+    <div class="explain">
+      <div><h4>Biểu đồ cho thấy</h4><p>Biên theo mức giảm giá là <strong>33,9%</strong> (0%, n=20), 31,3% (5%, n=58), 25,7% (10%, n=70), 25,8% (15%, n=46), rồi 15,4% (20%, n=23), 13,7% (25%, n=15), 5,8% (30%, n=5) và <strong>âm 1,3%</strong> (35%, n=3). Từ 0% lên 10% biên đã giảm khoảng 8 điểm; 10% và 15% gần như bằng nhau; bước giảm lớn tiếp theo là từ 15% sang 20%. Mức 30% và 35% chỉ có 5 và 3 giao dịch. Tương quan giảm giá và biên là <strong>r = −0,71</strong>.</p></div>
+      <div><h4>Mẫu hình</h4><p>Giá vốn gần như không đổi theo mức giảm giá (tương quan giữa giảm giá và tỷ lệ giá vốn trên giá niêm yết là <strong>r = 0,06</strong>). Doanh thu giảm đúng bằng mức giảm, nên biên giảm là hệ quả của công thức. Trong từng nhóm hàng, giảm giá giải thích khoảng 80–88% độ biến thiên của biên. Electronics có giá vốn khoảng 75% giá niêm yết, Food &amp; Beverage khoảng 68%, Fashion khoảng 58%. Vì vậy chỉ hai nhóm đầu có đơn lỗ: cả 6 giao dịch lỗ đều thuộc Electronics hoặc Food &amp; Beverage và đều giảm từ 25%. Điểm đánh giá cũng thấp hơn khi giảm sâu (4,44 khi không giảm giá; 3,93 ở các giao dịch giảm từ 20% trở lên). Giảm giá trung bình trong bài là trung bình cộng từng giao dịch.</p></div>
+      <div><h4>Ý nghĩa</h4><p>Trần giảm giá có ích vì giá vốn không co lại theo khuyến mãi. Với Electronics và F&amp;B, mức từ 25% đã có đơn lỗ. Nên đặt <strong>trần 15–20%</strong>, thấp hơn cho hai nhóm này, và chuyển khuyến mãi sang quà tặng, combo hoặc hoàn tiền. Điểm thấp hơn ở đơn giảm sâu là tương quan riêng, chưa chứng minh giảm giá làm khách kém hài lòng.</p></div>
+    </div>
+  </section>
+
+  <!-- Insight 4 -->
+  <section id="insight-4" class="section insight">
+    <div class="insight-head"><span class="badge">Nhận định 4</span><span class="dim">Xu hướng theo thời gian</span></div>
+    <h2>Tháng 6 có biên thấp nhất vì cơ cấu Electronics; tháng 12 giảm giá mạnh nhất. Quý 4 bán nhiều nhất, nhưng biên quý chỉ thấp hơn quý 2 khoảng 0,4 điểm.</h2>
+    <figure class="card chart-card">
+        <figcaption><strong>Doanh thu và lợi nhuận theo tháng</strong><span>Rê chuột để xem cùng lúc hai biểu đồ · kéo thanh trượt để phóng to · nhấn một tháng để lọc, tháng ngoài khoảng vẫn hiện nhưng mờ</span></figcaption>
+      <div id="cMonthMoney" class="chart"></div>
+    </figure>
+    <figure class="card chart-card">
+      <figcaption><strong>Biên lợi nhuận và mức giảm giá trung bình theo tháng</strong><span>Cùng đơn vị % nên dùng chung một trục</span></figcaption>
+      <div id="cMonthPct" class="chart short"></div>
+    </figure>
+    <div class="explain">
+      <div><h4>Biểu đồ cho thấy</h4><p>Doanh thu có ba đỉnh: tháng 3, tháng 7 và tháng 11–12. Tháng biên thấp nhất là tháng 6 (<strong>19,7%</strong>). Tháng giảm giá mạnh nhất là tháng 12 (<strong>17,6%</strong> trung bình mỗi giao dịch; 16,3% nếu tính theo doanh thu), biên tháng 12 là <strong>20,2%</strong>, với 14/27 giao dịch giảm từ 20%. Quý 4 có doanh thu cao nhất (<strong>60,5 tr</strong>, 76 giao dịch) và biên quý <strong>23,9%</strong>, thấp nhất trong bốn quý nhưng chỉ thấp hơn quý 2 (24,3%) khoảng 0,4 điểm. Trong quý 4, tháng 10 vẫn biên 27,5%; phần mỏng là tháng 11 (24,1%) và tháng 12. Vùng tô trên biểu đồ là tháng 11–12, không phải cả quý 4.</p></div>
+      <div><h4>Mẫu hình</h4><p>Giảm giá trung bình trên biểu đồ là trung bình cộng từng giao dịch, không nhân theo doanh thu. Tháng 6 biên 19,7% dù giảm giá chỉ 11,1%, vì Electronics chiếm <strong>59,6%</strong> doanh thu tháng đó. Tháng 9 cũng mỏng (biên <strong>22,0%</strong>) khi Electronics chiếm 50,6% và giảm giá chỉ 8,5%. Tháng biên thấp nhất và tháng giảm giá mạnh nhất không trùng nhau.</p></div>
+      <div><h4>Ý nghĩa</h4><p>Khuyến mãi tháng 12 kéo doanh số, nhưng biên tháng đó mỏng hơn các tháng đầu quý. Một tháng biên mỏng cũng có thể đến từ cơ cấu hàng, như tháng 6 và tháng 9. Nên tách hai việc: trần giảm giá ở Nhận định 3, và cơ cấu ngành hàng ở Nhận định 1–2. Xếp hạng biên theo quý thì quý 4 đứng cuối, nhưng chênh lệch với quý 2 rất nhỏ so với chênh lệch giữa các tháng.</p></div>
+    </div>
+  </section>
+
+  <!-- Insight 5 -->
+  <section id="insight-5" class="section insight">
+    <div class="insight-head"><span class="badge">Nhận định 5</span><span class="dim">Giao hàng · Đánh giá khách hàng</span></div>
+    <h2>Điểm đánh giá đi cùng tốc độ giao: khoảng 0,3 điểm thấp hơn cho mỗi ngày giao thêm. Thủ Đức giao chậm nhất và có điểm thấp nhất.</h2>
+    <div class="grid-2">
+      <figure class="card chart-card">
+        <figcaption><strong>Điểm đánh giá trung bình theo số ngày giao hàng</strong><span>Đường đậm xanh = toàn chuỗi · ô dưới 3 đơn không được nối · đường dày hơn = chi nhánh điểm thấp nhất trong phần đang lọc · trục nằm trong thang 1–5, không bắt đầu từ 0</span></figcaption>
+        <div id="cDelivRating" class="chart"></div>
+      </figure>
+      <figure class="card chart-card">
+        <figcaption><strong>Phân bố số ngày giao hàng theo chi nhánh</strong><span>Màu càng đậm = giao càng chậm</span></figcaption>
+        <div id="cDelivStore" class="chart"></div>
+      </figure>
+    </div>
+    <div class="explain">
+      <div><h4>Biểu đồ cho thấy</h4><p>Trên các đơn có đủ cả điểm và số ngày giao, điểm trung bình là <strong>4,51</strong> (1 ngày, n=51), 4,20 (2 ngày, n=95), 3,96 (3 ngày, n=72), <strong>3,63</strong> (4 ngày, n=13). Tương quan r = <strong>−0,68</strong>, độ dốc hồi quy khoảng <strong>−0,28</strong> điểm mỗi ngày thêm. Mạnh hơn tương quan giữa giảm giá và điểm (r = −0,38). Đây là tương quan, chưa chứng minh giao chậm làm điểm giảm.</p></div>
+      <div><h4>Điều tra</h4><p>Đường từng chi nhánh chỉ nối những ô có ít nhất 3 đơn, nên một đơn lẻ không tạo độ dốc. Quận 1 không có đơn giao 4 ngày. Ô 4 ngày của Quận 3 chỉ có 1 đơn nên không được vẽ. Ở những ô đủ số, các chi nhánh đều có điểm thấp hơn khi giao lâu hơn. Thủ Đức có 67% đơn đã biết ngày giao rơi vào 3–4 ngày (Quận 1: 14%), nên điểm trung bình thấp nhất (3,98 so với 4,27).</p></div>
+      <div><h4>Ý nghĩa</h4><p>Tốc độ giao gắn với sự hài lòng và có thể cải thiện được. Ưu tiên Thủ Đức và Quận 7: thêm kho trung chuyển hoặc đối tác giao hàng nội quận để kéo nhiều đơn về 1–2 ngày.</p></div>
+    </div>
+  </section>
+
+  <!-- Insight 6 -->
+  <section id="insight-6" class="section insight">
+    <div class="insight-head"><span class="badge">Nhận định 6</span><span class="dim">Khách hàng · Thanh toán</span></div>
+    <h2>Ví điện tử là phương thức thanh toán chính của mọi nhóm khách, chiếm 41% giao dịch và hơn một nửa giao dịch của khách du lịch.</h2>
+    <div class="grid-2">
+      <figure class="card chart-card">
+        <figcaption><strong>Tỷ trọng phương thức thanh toán</strong><span>Nhấn vào lát cắt để lọc theo phương thức</span></figcaption>
+        <div id="cPayPie" class="chart"></div>
+      </figure>
+      <figure class="card chart-card">
+        <figcaption><strong>Cơ cấu thanh toán theo loại khách hàng (100% số giao dịch)</strong><span>Nhấn vào cột để lọc theo loại khách</span></figcaption>
+        <div id="cPayCust" class="chart"></div>
+      </figure>
+    </div>
+    <div class="explain">
+      <div><h4>Biểu đồ cho thấy</h4><p>E-wallet chiếm <strong>98/240</strong> giao dịch (41%) và 43% doanh thu, gần gấp đôi phương thức đứng thứ hai là thẻ tín dụng (23%). Chuyển khoản ít dùng nhất (15%).</p></div>
+      <div><h4>Mẫu hình</h4><p>E-wallet đứng đầu ở <em>cả bốn</em> nhóm khách: khách du lịch 52%, gia đình 45%, nhân viên văn phòng 39%, sinh viên 34%. Sinh viên dùng các phương thức đều nhau nhất. Riêng chuyển khoản có điểm đánh giá trung bình thấp nhất (4,05).</p></div>
+      <div><h4>Ý nghĩa</h4><p>Ưu đãi gắn với ví điện tử (hoàn tiền, tích điểm) sẽ tiếp cận được nhiều khách nhất, và hợp lý hơn giảm giá trực tiếp (xem Nhận định 3). Với khách du lịch, cần đảm bảo chấp nhận các ví quốc tế phổ biến.</p></div>
+    </div>
+  </section>
+
+  <!-- Insight 7 -->
+  <section id="insight-7" class="section insight">
+    <div class="insight-head"><span class="badge">Nhận định 7</span><span class="dim">Hành vi mua theo thời điểm</span></div>
+    <h2>Trung bình tổng cả năm của một ngày thường cao hơn một ngày cuối tuần 30,5%. Chủ nhật có tổng cả năm thấp nhất.</h2>
+    <div class="grid-2">
+      <figure class="card chart-card">
+        <figcaption><strong>Doanh thu theo ngày trong tuần</strong><span>Mỗi cột là tổng của thứ đó trong phần đang xem, không phải một ngày lịch · màu cam = cuối tuần · nhấn cột để lọc theo ngày</span></figcaption>
+        <div id="cWeekday" class="chart"></div>
+      </figure>
+      <figure class="card chart-card">
+        <figcaption><strong>Doanh thu theo loại khách × ngày trong tuần</strong><span>Màu càng đậm = doanh thu càng cao (triệu ₫) · nhấn ô để lọc theo ngày, không lọc theo loại khách</span></figcaption>
+        <div id="cHeat" class="chart"></div>
+      </figure>
+    </div>
+    <div class="explain">
+      <div><h4>Biểu đồ cho thấy</h4><p>Mỗi cột là tổng cả năm của thứ đó, không phải doanh thu một ngày lịch. Thứ 3 có tổng cao nhất (<strong>34,0 tr</strong>, 42 giao dịch), Chủ nhật thấp nhất (<strong>18,9 tr</strong>, 29 giao dịch). Trung bình tổng năm của một thứ trong tuần là <strong>28,8 tr</strong>, của một ngày cuối tuần là <strong>22,0 tr</strong>. So theo cách này, ngày thường cao hơn cuối tuần <strong>30,5%</strong> (lấy cuối tuần làm mẫu số).</p></div>
+      <div><h4>Mẫu hình</h4><p>Bản đồ nhiệt cho thấy các nhóm khách mua khác nhau. Nhân viên văn phòng là nhóm lớn nhất (89 giao dịch, <strong>39,1%</strong> doanh thu) và mua chủ yếu vào ngày thường: trung bình tổng năm <strong>11,8 tr</strong> mỗi thứ so với <strong>7,4 tr</strong> mỗi ngày cuối tuần. Nhóm gia đình cũng vậy. Sinh viên và khách du lịch có tổng cuối tuần cao hơn (sinh viên: 7,6 tr so với 5,3 tr), nhưng hai nhóm này nhỏ nên không bù phần sụt của ngày thường.</p></div>
+      <div><h4>Ý nghĩa</h4><p>Nên bố trí nhân sự và hàng hoá đông nhất vào Thứ 3–Thứ 4. Cuối tuần, đặc biệt Chủ nhật, nên chạy chương trình dành cho sinh viên và khách du lịch, là hai nhóm vốn đã ưu tiên mua sắm cuối tuần.</p></div>
+    </div>
+  </section>
+
+  <!-- Insight 8 -->
+  <section id="insight-8" class="section insight">
+    <div class="insight-head"><span class="badge">Nhận định 8</span><span class="dim">Giao dịch bất thường · Toạ độ song song</span></div>
+    <h2>Một vài giao dịch có ảnh hưởng lớn: 1 đơn áo khoác chiếm 12,5% lợi nhuận cả năm của Thủ Đức, còn 3/6 giao dịch lỗ nằm ở Quận 1.</h2>
+    <figure class="card chart-card">
+      <figcaption><strong>Khám phá từng giao dịch trên nhiều chiều cùng lúc</strong><span>Rê một đường để xem mã giao dịch · kéo dọc trên một trục để lọc · màu = biên lợi nhuận</span></figcaption>
+      <div class="preset-row">
+        <button class="chip" data-preset="loss" type="button">Giao dịch lỗ</button>
+        <button class="chip" data-preset="big" type="button">Đơn lớn (SL ≥ 6)</button>
+        <button class="chip" data-preset="slow" type="button">Giao 4 ngày</button>
+        <button class="chip" data-preset="clear" type="button">Bỏ chọn</button>
+      </div>
+      <div id="cParallel" class="chart tall"></div>
+      <div id="parallelInfo" class="brush-info"></div>
+      <div class="table-wrap small"><table id="parallelTable"></table></div>
+    </figure>
+    <div class="explain">
+      <div><h4>Biểu đồ cho thấy</h4><p>Hầu hết các đường tập trung ở vùng SL 1–2, giảm giá 5–15%, biên 20–40%. Nổi bật lên có <strong>6 đường đỏ (lỗ)</strong>, đều có giảm giá 25–35% và đều thuộc Electronics hoặc F&amp;B, cùng một số đơn số lượng lớn (SL 6–10).</p></div>
+      <div><h4>Mẫu hình</h4><p>Đơn T0106 (6 áo khoác, Thủ Đức) lãi <strong>1,76 tr</strong>, bằng 12,5% lợi nhuận cả năm của chi nhánh. Đơn T0040 (8 tai nghe, Quận 7) có doanh thu cao nhất (5,38 tr) nhưng biên chỉ 9,8% vì vừa là Electronics vừa giảm 20%. Quận 1 chiếm 3/6 giao dịch lỗ.</p></div>
+      <div><h4>Ý nghĩa</h4><p>Với mẫu 240 giao dịch, chỉ vài đơn lớn cũng đủ làm thay đổi xếp hạng chi nhánh. Khi đánh giá hiệu quả, cần xem cả trung vị và loại trừ đơn ngoại lai. Cần có quy trình duyệt cho các đơn giảm giá ≥ 25%.</p></div>
+    </div>
+  </section>
+
+  <!-- Kết luận -->
+  <section id="ket-luan" class="section">
+    <h2><span class="sec-no">03</span> Tổng hợp nhận định &amp; khuyến nghị</h2>
+    <div class="summary-grid">
+      <div class="card sum"><span class="sum-no">1</span><p><strong>Doanh thu ≠ lợi nhuận.</strong> Electronics bán nhiều nhất nhưng biên chỉ 15%. Fashion biên 34%.</p></div>
+      <div class="card sum"><span class="sum-no">2</span><p><strong>Cơ cấu sản phẩm quyết định biên của chi nhánh.</strong> Quận 1 có 53% doanh thu từ Electronics nên biên thấp nhất.</p></div>
+      <div class="card sum"><span class="sum-no">3</span><p><strong>Biên giảm theo giảm giá chủ yếu vì giá vốn không giảm theo.</strong> Cả 6 giao dịch lỗ thuộc Electronics hoặc F&amp;B và đều giảm từ 25%. Mức 30% và 35% chỉ có 5 và 3 đơn.</p></div>
+      <div class="card sum"><span class="sum-no">4</span><p><strong>Tháng 6 biên thấp nhất (19,7%)</strong> vì Electronics chiếm 59,6% doanh thu. Tháng 12 giảm giá TB 17,6% mỗi giao dịch (16,3% nếu tính theo doanh thu), biên 20,2%. Quý 4 bán nhiều nhất (60,5 tr), biên quý 23,9%, chỉ thấp hơn quý 2 khoảng 0,4 điểm.</p></div>
+      <div class="card sum"><span class="sum-no">5</span><p><strong>Giao càng chậm, điểm càng thấp.</strong> Điểm đi từ 4,51 xuống 3,63 khi giao từ 1 lên 4 ngày (tương quan, chưa phải nhân quả). Thủ Đức giao chậm nhất.</p></div>
+      <div class="card sum"><span class="sum-no">6</span><p><strong>Ví điện tử là kênh chính</strong> (41% giao dịch), dẫn đầu ở mọi nhóm khách.</p></div>
+      <div class="card sum"><span class="sum-no">7</span><p><strong>Trung bình tổng năm của một thứ trong tuần là 28,8 tr</strong>, của một ngày cuối tuần là 22,0 tr (cao hơn 30,5%). Tổng cao nhất vào Thứ 3, thấp nhất vào Chủ nhật. Mỗi cột là tổng cả năm của thứ đó.</p></div>
+      <div class="card sum"><span class="sum-no">8</span><p><strong>Một vài giao dịch có ảnh hưởng lớn</strong> đến kết quả chi nhánh, nên cần xem xét các đơn ngoại lai.</p></div>
+    </div>
+    <div class="card conclusion">
+      <h3>Khuyến nghị cho nhà bán lẻ</h3>
+      <ol>
+        <li><strong>Quản trị theo lợi nhuận, không theo doanh thu:</strong> đưa biên lợi nhuận vào KPI của chi nhánh và ngành hàng.</li>
+        <li><strong>Đặt trần giảm giá 15–20%</strong> (thấp hơn cho Electronics/F&amp;B), vì giá vốn gắn với giá niêm yết nên đơn giảm ≥ 25% ở hai nhóm này đã có lỗ và phải được duyệt. Chuyển khuyến mãi sang hoàn tiền qua ví điện tử.</li>
+        <li><strong>Tái cơ cấu ngành hàng tại Quận 1:</strong> tăng tỷ trọng Fashion và Sports, bán kèm phụ kiện cho Electronics.</li>
+        <li><strong>Rút ngắn thời gian giao hàng ở Thủ Đức và Quận 7</strong> xuống 1–2 ngày để nâng điểm đánh giá.</li>
+        <li><strong>Lên kế hoạch khuyến mãi cuối năm theo lợi nhuận của tháng 12</strong>, không đánh đồng cả quý 4. Bố trí nguồn lực nhiều nhất vào Thứ 3–Thứ 4. Tháng 6 và tháng 9 là phản ví dụ: biên mỏng vì cơ cấu Electronics, không phải vì giảm giá cao.</li>
+      </ol>
+      <p class="muted">Hạn chế: mẫu chỉ có 240 giao dịch (trung bình 5 giao dịch/tháng/chi nhánh) nên các khác biệt nhỏ giữa các nhóm có thể do ngẫu nhiên. Đây là phân tích mô tả, chưa kiểm định thống kê và chưa chứng minh quan hệ nhân quả.</p>
+    </div>
+  </section>
+
+  <!-- Bảng dữ liệu -->
+  <section id="bang-du-lieu" class="section">
+    <h2><span class="sec-no">04</span> Bảng dữ liệu (theo bộ lọc hiện tại)</h2>
+    <p class="muted">Mọi giá trị trên các biểu đồ đều có thể tra lại ở bảng này. Nhấn vào tiêu đề cột để sắp xếp. <a href="data/urban_retail_sales_hcmc_2025_240.csv" download>Tải file CSV gốc</a>.</p>
+    <div class="table-wrap"><table id="dataTable"></table></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">Lê Thị Hồng Đào · 25C02001 · Đồ án giữa kỳ Trực quan hoá dữ liệu · Dựng bằng Apache ECharts &amp; Leaflet · Bản đồ © OpenStreetMap</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
